@@ -7,6 +7,7 @@ public class Stats : MonoBehaviour
     // Start is called before the first frame update
     public float health = 100f;
     public float damageOnHit = 100f;
+
     void Start()
     {
         
@@ -19,7 +20,7 @@ public class Stats : MonoBehaviour
     }
     public void OnHit() {
         //health = health - damageOnHit; Restale y asignalo
-        health -=damageOnHit;
+        health -= damageOnHit;
 
         if (health <= 0f) {
             Die();

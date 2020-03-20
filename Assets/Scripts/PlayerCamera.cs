@@ -19,9 +19,11 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      newX = Mathf.Lerp(transform.position.x, player.position.x + offset.x, cameraSmooth * Time.deltaTime);
-      newY = Mathf.Lerp(transform.position.y, player.position.y + offset.y, cameraSmooth * Time.deltaTime);
-      transform.position = new Vector3 (newX, newY, offset.z); // Camera follows the player with specified offset position
+      if(player != null){
+        newX = Mathf.Lerp(transform.position.x, player.position.x + offset.x, cameraSmooth * Time.deltaTime);
+        newY = Mathf.Lerp(transform.position.y, player.position.y + offset.y, cameraSmooth * Time.deltaTime);
+        transform.position = new Vector3 (newX, newY, offset.z); // Camera follows the player with specified offset position
+      }
         
     }
 }

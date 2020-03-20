@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public GameObject projectile;
     public float fireDelay = 1f;
     private float timeSinceLastFire = 0f;
-    public string damageableTargetTag = "";
+    public string damageableTargetTag = "Enemy";
     
     private Animator animator;
     float vMovement = 0f;
@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 3f;
     public float turnSpeed = 5f;
     public float jumpSpeed = 4f;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -53,13 +54,16 @@ public class PlayerController : MonoBehaviour
         characterController.Move(movement * Time.deltaTime);
 
         timeSinceLastFire += Time.deltaTime;
+
         //Solamente se puede disparar si ya paso el tiempo definido
         if (timeSinceLastFire >= fireDelay){
             //Can shoot
             if (Input.GetButton("Fire1")){
-                // Debug.Log("Pew");
-                //Crear proyectil
-                Instantiate(projectile, transform.position + new Vector3(1.5f,0f,0f), Quaternion.Euler(0, 0, -90));
+            // Debug.Log("Pew");
+            //Crear proyectil
+            //TODO Si donde se instancia esta moviendose a la izquierda, disparar en esa direccion
+            //TODO Si donde se instancia esta moviendose a la derecha, disparar en esa direccion
+                Instantiate(projectile, transform.position + new Vector3(1.5f,0f,0f), Quaternion.Euler(0, 0, 0));
                 projectile.GetComponent<Projectile>().damageableTargetTag = "Enemy";
                 //Reiniciar contador de tiempo para disparar
                 timeSinceLastFire = 0f;
