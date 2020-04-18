@@ -6,17 +6,16 @@ public class Projectile : MonoBehaviour
 {
     // Start is called before the first frame update
     public float projectileSpeed = 0.5f;
-    // public int maxYPosition = 100;
-    // public int minYPosition = -100;
-    // public int maxXPosition = 100;
-    // public int minXPosition = -100;
+
     public string damageableTargetTag = "";
     Vector3 projectileDirection;
     public bool shootRight = false;
+
     public float m_Lifespan = 3f; // this is the projectile's lifespan (in seconds)
     void Start()
     {
         Destroy(gameObject, m_Lifespan);
+        
     }
 
     // Update is called once per frame
@@ -35,8 +34,7 @@ public class Projectile : MonoBehaviour
     
         
     }
-    void OnCollisionEnter(Collision other) {
-        Debug.Log(other.gameObject);
+private void OnTriggerEnter(Collider other) {
             
             if (other.gameObject.tag == damageableTargetTag){
                 Stats enemyStats = other.gameObject.GetComponent<Stats>();

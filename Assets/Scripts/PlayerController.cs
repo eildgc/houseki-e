@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
     private CharacterController characterController;
-    public GameObject projectile;
+    public Projectile projectile;
     public float fireDelay = 1f;
     private float timeSinceLastFire = 0f;
     public string damageableTargetTag = "Enemy";
@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public float turnSpeed = 5f;
     public float jumpSpeed = 4f;
 
+    bool movingRight = true;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -37,6 +39,10 @@ public class PlayerController : MonoBehaviour
             hMovement = Input.GetAxis("Horizontal");
             vMovement = 0f;
 
+            if(hMovement != 0){
+                movingRight = hMovement >= 0;
+            }
+            
             if(Input.GetKeyDown(KeyCode.Space)){
                 vMovement = jumpSpeed;
             }
@@ -63,10 +69,13 @@ public class PlayerController : MonoBehaviour
             //Crear proyectil
             //TODO Si donde se instancia esta moviendose a la izquierda, disparar en esa direccion
             //TODO Si donde se instancia esta moviendose a la derecha, disparar en esa direccion
-                Instantiate(projectile, transform.position + new Vector3(1.5f,0f,0f), Quaternion.Euler(0, 0, 0));
+
+                Projectile playerProjectileInstance = Instantiate(projectile, transform.position + new Vector3(0.5f,0f,0f), Quaternion.Euler(0, 0, 0));
+                playerProjectileInstance.shootRight = movingRight;
                 projectile.GetComponent<Projectile>().damageableTargetTag = "Enemy";
                 //Reiniciar contador de tiempo para disparar
                 timeSinceLastFire = 0f;
+                
             }
         }
     }

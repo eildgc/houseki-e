@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     // Start is called before the first frame update
+    
+    //Enemy script OBSOLETE
+
     public float fireDelay = 1f;
     public GameObject projectile;
     private float timeSinceLastFire = 0f;
@@ -28,6 +31,9 @@ public class EnemyController : MonoBehaviour
     Vector3 playerDistance = new Vector3(9999,9999,0);
     public float shootPlayerDistanceThreshold = 0f;
     public GameObject player;
+
+
+
 
     void Start()
     {
@@ -74,7 +80,7 @@ public class EnemyController : MonoBehaviour
                 movingRight = true;
             }
         }
-        if( player != null){
+        if (player != null){
             playerDistance = player.transform.position - transform.position;
         }
         //Solamente se puede disparar si ya paso el tiempo definido
@@ -87,7 +93,6 @@ public class EnemyController : MonoBehaviour
             //TODO Disparar al player
             var spawnOffSet = new Vector3(1.5f,0f,0f);
             if (!shootRight){
-            
                 spawnOffSet = new Vector3(-1.5f,0f,0f);
             }
             Instantiate(projectile, transform.position + spawnOffSet, Quaternion.Euler(0, 0, 0));
@@ -97,7 +102,6 @@ public class EnemyController : MonoBehaviour
             
             projectilesFired++;
             timeSinceLastFire = 0f;
-        //you will get the direction from the enemy to the player by using 
         }
     }
             

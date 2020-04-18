@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 992843461691490977, guid: 97e3427a8c6188244afce9763076c804,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5668074315260365111, guid: 97e3427a8c6188244afce9763076c804,
         type: 3}
       propertyPath: m_Name

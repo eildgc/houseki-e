@@ -5,8 +5,8 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float health = 100f;
-    public float damageOnHit = 100f;
+    public float health = 200f;
+    public float damageOnHit = 50f;
 
     void Start()
     {
