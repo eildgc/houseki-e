@@ -2,16 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Obsolete("THIS SCRIPT IS OBSOLETE. THE NEW ONE IS PlayerController.cs",true)]
 public class Movement : MonoBehaviour
-{
+{   
+    //THIS SCRIPT IS OBSOLETE. THE NEW ONE IS PlayerController.cs
+    //for the enemy, it uses EnemyController2.cs
+    //Thank you for reading,
+    //Quack
     CharacterController characterController;
+    /// <summary>
+    /// 
+    /// </summary>
     private Animator animator;
+    /// <summary>
+    /// Vertical movement. To be used to make the player jump
+    /// </summary>
     float vMovement = 0f;
+    /// <summary>
+    /// Horizontal movement. Used to make the player move.
+    /// </summary>
     float hMovement = 0f;
-    float runningSpeed = 4.5f;
+    
+    //float runningSpeed = 4.5f;
     bool running = false;
+    /// <summary>
+    /// Variable that saves the desire movement for the player.
+    /// </summary>
     Vector3 movement = Vector3.zero;
+    /// <summary>
+    ///  Used to rotate the projectiles that the player instantiates or to dictate the desire rotation. 
+    /// </summary>
     Quaternion rotation = Quaternion.identity;
+    /// <summary>
+    /// 
+    /// </summary>
     Vector3 newForward = Vector3.zero;
     public float speed = 3f;
     public float turnSpeed = 5f;

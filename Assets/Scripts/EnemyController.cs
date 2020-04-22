@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Obsolete("THIS SCRIPT IS OBSOLETE. THE NEW ONE IS EnemyController2.cs",true)]
 public class EnemyController : MonoBehaviour
 {
     // Start is called before the first frame update
