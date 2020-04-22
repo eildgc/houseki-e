@@ -4,7 +4,8 @@ School project in progress!
 Expect lack of some features or bugs, project is in develoment.
 Sorry for any inconvenience
 
-CONTROLS:
+CONTROLS:                                                   
+
 To Move player:
 WASD or arrow keys
 
