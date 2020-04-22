@@ -1,17 +1,17 @@
 # 3d-demo-game
 
 School project in progress!
-Expect lack of some features or bugs, project is in development.
+Expect lack of some features or bugs, project is in develoment.
 Sorry for any inconvenience
 
 CONTROLS:
-To Move player
+To Move player:
 WASD or arrow keys
 
-To Jump
+To Jump:
 Space
 
-To shot
+To shot:
 Click with left button
 
 Playing instructions:
