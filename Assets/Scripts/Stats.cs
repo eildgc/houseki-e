@@ -48,6 +48,7 @@ public class Stats : MonoBehaviour
         {
             var gameManagerComponent = GameObject.Find("GameManager").GetComponent<GameManager>();
             gameManagerComponent.GameOver();
+            Debug.Log("Player died");
             Destroy(this.gameObject);
         }
         else {
